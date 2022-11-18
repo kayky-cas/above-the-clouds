@@ -1,0 +1,1 @@
+require("kayky-cas.init")
