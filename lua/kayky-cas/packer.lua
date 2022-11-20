@@ -74,6 +74,11 @@ return require('packer').startup(function(use)
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
-    use 'neovim/nvim-lspconfig'
     use 'sigmasd/deno-nvim'
+    use({
+        "aserowy/tmux.nvim",
+        config = function() require("tmux").setup() end
+    })
+
+    use ('kyazdani42/nvim-web-devicons')
 end)

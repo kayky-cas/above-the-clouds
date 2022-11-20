@@ -1,5 +1,6 @@
 require("kayky-cas.set")
 require("kayky-cas.packer")
+require("kayky-cas.telescope")
 require("kayky-cas.remap")
 require("kayky-cas.rust")
 require("kayky-cas.lualine")

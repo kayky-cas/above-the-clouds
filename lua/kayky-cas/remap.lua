@@ -7,7 +7,7 @@ nnoremap("<leader>q", "<cmd>q<CR>")
 -- nnoremap("<leader><Tab>", "<cmd>bn<CR>")
 nnoremap("<leader>t", "<cmd>Sex!<CR>")
 
-local builtin = require('telescope.builtin')
+local tb = require('telescope.builtin')
 
-vim.keymap.set('n', '<leader> ', builtin.find_files, {})
-vim.keymap.set('n', '<leader><Tab>', builtin.buffers, {})
+vim.keymap.set('n', '<leader> ', tb.find_files, {})
+-- vim.keymap.set('n', '<leader><Tab>', builtin.buffers, {})
