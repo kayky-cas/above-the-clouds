@@ -18,4 +18,3 @@ vim.opt.autoindent = true
 vim.g.mapleader = " "
 
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
-
