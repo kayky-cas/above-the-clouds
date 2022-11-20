@@ -70,4 +70,9 @@ return require('packer').startup(function(use)
     })
 
     use('kyazdani42/nvim-web-devicons')
+
+
+    use("christoomey/vim-tmux-navigator")
+
+    use('norcalli/nvim-colorizer.lua')
 end)
