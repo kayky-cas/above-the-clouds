@@ -39,3 +39,5 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 require 'lspconfig'.html.setup {
     capabilities = capabilities,
 }
+
+require 'lspconfig'.java_language_server.setup {}
