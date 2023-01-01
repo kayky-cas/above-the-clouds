@@ -13,5 +13,14 @@ nnoremap("<leader>=", "<C-w>s")
 -- nnoremap("<leader>t", "<cmd>Sex!<CR>")
 
 local tb = require('telescope.builtin')
+nnoremap("<leader><Tab>", "zz")
 nnoremap("<leader> ", tb.find_files)
+
+nnoremap("<leader><C-l>", "<cmd>vertical resize +25<CR>")
+nnoremap("<leader><C-h>", "<cmd>vertical resize -25<CR>")
+nnoremap("<leader><C-j>", "<cmd>resize +25<CR>")
+nnoremap("<leader><C-k>", "<cmd>resize -25<CR>")
+
+nnoremap("<C-d>", "<C-d>zz")
+nnoremap("<C-u>", "<C-u>zz")
 -- vim.keymap.set('n', '<leader><Tab>', builtin.buffers, {})

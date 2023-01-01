@@ -31,31 +31,15 @@ return require('packer').startup(function(use)
 
     use("nvim-lua/plenary.nvim")
 
-    -- Auto close {}, (), "", etc..
-    use {
-        "windwp/nvim-autopairs",
-        config = function() require("nvim-autopairs").setup {} end
-    }
-
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
 
     use {
-        "folke/zen-mode.nvim",
-        config = function()
-            require("zen-mode").setup {
-            }
-        end
-    }
-
-    use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
-
-    use { "mfussenegger/nvim-jdtls", ft = { "java" } }
 
     use('Mofiqul/dracula.nvim')
 
@@ -71,8 +55,29 @@ return require('packer').startup(function(use)
 
     use('kyazdani42/nvim-web-devicons')
 
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {
+                -- TODO
+            }
+        end
+    }
 
     use("christoomey/vim-tmux-navigator")
 
     use('norcalli/nvim-colorizer.lua')
+
+    use 'ThePrimeagen/vim-be-good'
+    use {
+        'xbase-lab/xbase',
+        run = 'make install', -- make free_space (not recommended, longer build time)
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim",
+            "neovim/nvim-lspconfig"
+        },
+        config = function()
+            require 'xbase'.setup({}) -- see default configuration bellow
+        end
+    }
 end)
