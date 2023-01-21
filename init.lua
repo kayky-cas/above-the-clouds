@@ -62,6 +62,9 @@ require('packer').startup(function(use)
 
   use 'christoomey/vim-tmux-navigator'
 
+  -- Using Packer:
+  use 'Mofiqul/dracula.nvim'
+
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
   if has_plugins then
@@ -158,7 +161,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 require('lualine').setup {
   options = {
     icons_enabled = false,
-    theme = 'onedark',
+    theme = 'dracula-nvim',
     component_separators = '|',
     section_separators = '',
   },
@@ -195,6 +198,10 @@ require('telescope').setup {
         ['<C-u>'] = false,
         ['<C-d>'] = false,
       },
+    },
+    file_ignore_patterns = {
+      "node_modules",
+      "target"
     },
   },
 }
@@ -431,19 +438,39 @@ cmp.setup {
 
 vim.opt.relativenumber = true
 
-local nnoremap = require("keymap").nnoremap
+-- local nnoremap = require("kayky-cas/keymap").nnoremap
 
-nnoremap("<leader>w", "<cmd>w<CR>")
-nnoremap("<leader>Q", "<cmd>q<CR>")
-nnoremap("<leader>-", "<C-w>v")
-nnoremap("<leader>=", "<C-w>s")
-nnoremap("<leader>q", "<cmd>close<CR>")
+local M = {}
 
-nnoremap("<leader><C-l>", "<cmd>vertical resize +25<CR>")
-nnoremap("<leader><C-h>", "<cmd>vertical resize -25<CR>")
-nnoremap("<leader><C-j>", "<cmd>resize +25<CR>")
-nnoremap("<leader><C-k>", "<cmd>resize -25<CR>")
+local function bind(op, outer_opts)
+    outer_opts = outer_opts or { noremap = true }
+    return function(lhs, rhs, opts)
+        opts = vim.tbl_extend("force",
+            outer_opts,
+            opts or {}
+        )
+        vim.keymap.set(op, lhs, rhs, opts)
+    end
+end
 
-nnoremap("<C-d>", "<C-d>zz")
-nnoremap("<C-u>", "<C-u>zz")
+M.nmap = bind("n", { noremap = false })
+M.nnoremap = bind("n")
+M.vnoremap = bind("v")
+M.xnoremap = bind("x")
+M.inoremap = bind("i")
+
+M.nnoremap("<leader>w", "<cmd>w<CR>")
+M.nnoremap("<leader>e", "<cmd>Ex<CR>")
+M.nnoremap("<leader>Q", "<cmd>q<CR>")
+M.nnoremap("<leader>-", "<C-w>v")
+M.nnoremap("<leader>=", "<C-w>s")
+M.nnoremap("<leader>q", "<cmd>close<CR>")
+
+M.nnoremap("<leader><C-l>", "<cmd>vertical resize +25<CR>")
+M.nnoremap("<leader><C-h>", "<cmd>vertical resize -25<CR>")
+M.nnoremap("<leader><C-j>", "<cmd>resize +25<CR>")
+M.nnoremap("<leader><C-k>", "<cmd>resize -25<CR>")
+
+M.nnoremap("<C-d>", "<C-d>zz")
+M.nnoremap("<C-u>", "<C-u>zz")
 
