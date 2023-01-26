@@ -13,13 +13,14 @@ nnoremap("<leader>=", "<C-w>s")
 -- nnoremap("<leader>t", "<cmd>Sex!<CR>")
 
 local tb = require('telescope.builtin')
-nnoremap("<leader><Tab>", "zz")
+nnoremap("<leader><Tab>", "<cmd>b#<CR>")
 nnoremap("<leader> ", tb.find_files)
 
 nnoremap("<leader><C-l>", "<cmd>vertical resize +25<CR>")
 nnoremap("<leader><C-h>", "<cmd>vertical resize -25<CR>")
 nnoremap("<leader><C-j>", "<cmd>resize +25<CR>")
 nnoremap("<leader><C-k>", "<cmd>resize -25<CR>")
+nnoremap("<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>")
 
 nnoremap("<C-d>", "<C-d>zz")
 nnoremap("<C-u>", "<C-u>zz")
