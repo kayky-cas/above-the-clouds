@@ -24,4 +24,5 @@ nnoremap("<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>")
 
 nnoremap("<C-d>", "<C-d>zz")
 nnoremap("<C-u>", "<C-u>zz")
+nnoremap("y", "\"*y")
 -- vim.keymap.set('n', '<leader><Tab>', builtin.buffers, {})
