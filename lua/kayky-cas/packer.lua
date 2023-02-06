@@ -55,14 +55,6 @@ return require('packer').startup(function(use)
 
     use('kyazdani42/nvim-web-devicons')
 
-    use {
-        "windwp/nvim-autopairs",
-        config = function() require("nvim-autopairs").setup {
-                -- TODO
-            }
-        end
-    }
-
     use("christoomey/vim-tmux-navigator")
 
     use('norcalli/nvim-colorizer.lua')
@@ -88,4 +80,8 @@ return require('packer').startup(function(use)
             }
         end
     }
+
+    use 'rstacruz/vim-closer'
+
+    use 'vim-autoformat/vim-autoformat'
 end)
