@@ -1,4 +1,4 @@
-vim.cmd [[packadd packer.nvim]]
+vim.cmd.packadd "packer.nvim"
 
 return require('packer').startup(function(use)
     use("wbthomason/packer.nvim")
@@ -66,4 +66,19 @@ return require('packer').startup(function(use)
     use 'rstacruz/vim-closer'
 
     use 'vim-autoformat/vim-autoformat'
+
+    use {
+        'lewis6991/gitsigns.nvim',
+        config = function()
+            require('gitsigns').setup()
+        end
+    }
+
+    use 'navarasu/onedark.nvim' -- Theme inspired by Atom
+
+    use { "catppuccin/nvim", as = "catppuccin" }
+
+    use 'folke/tokyonight.nvim'
+
+    use 'nyoom-engineering/nyoom.nvim'
 end)
