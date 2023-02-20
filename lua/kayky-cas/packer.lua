@@ -61,7 +61,25 @@ return require('packer').startup(function(use)
 
     use 'ThePrimeagen/vim-be-good'
 
-    use { "williamboman/mason.nvim" }
+    use {
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+    }
+
+    use 'github/copilot.vim'
+
+    -- Lua
+    use {
+        "folke/todo-comments.nvim",
+        requires = "nvim-lua/plenary.nvim",
+        config = function()
+            require("todo-comments").setup {
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            }
+        end
+    }
 
     use 'rstacruz/vim-closer'
 
