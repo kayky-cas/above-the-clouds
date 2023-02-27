@@ -17,5 +17,10 @@ vim.opt.wrap = false
 vim.opt.autoindent = true
 
 vim.g.mapleader = " "
+vim.g.clipboard = "unnamedplus"
 
-vim.cmd [[autocmd BufWritePre * :Autoformat]]
+-- vim.opt.guicursor = "n-v-c-i:block"
+
+
+vim.cmd("set clipboard+=unnamedplus")
+vim.cmd("autocmd BufWritePre * :Autoformat")

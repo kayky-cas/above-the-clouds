@@ -18,7 +18,7 @@ nvim_lsp.tsserver.setup {
     root_dir = nvim_lsp.util.root_pattern("package.json"),
 }
 
-nvim_lsp.sumneko_lua.setup {
+nvim_lsp.lua_ls.setup {
     settings = {
         Lua = {
             runtime = {

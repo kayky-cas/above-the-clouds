@@ -1,35 +1,35 @@
-vim.cmd [[packadd packer.nvim]]
+vim.cmd.packadd 'packer.nvim'
 
 return require('packer').startup(function(use)
-    use("wbthomason/packer.nvim")
+    use('wbthomason/packer.nvim')
 
-    use("neovim/nvim-lspconfig")
+    use('neovim/nvim-lspconfig')
 
     use({
-        "j-hui/fidget.nvim",
+        'j-hui/fidget.nvim',
         config = function()
-            require("fidget").setup()
+            require('fidget').setup()
         end
     })
 
-    use("hrsh7th/nvim-cmp")
+    use('hrsh7th/nvim-cmp')
 
     use({
-        "hrsh7th/cmp-nvim-lsp",
-        "hrsh7th/cmp-vsnip",
-        "hrsh7th/cmp-path",
-        "hrsh7th/cmp-buffer",
-        after = { "hrsh7th/nvim-cmp" },
-        requires = { "hrsh7th/nvim-cmp" },
+        'hrsh7th/cmp-nvim-lsp',
+        'hrsh7th/cmp-vsnip',
+        'hrsh7th/cmp-path',
+        'hrsh7th/cmp-buffer',
+        after = { 'hrsh7th/nvim-cmp' },
+        requires = { 'hrsh7th/nvim-cmp' },
     })
 
-    use("hrsh7th/vim-vsnip")
+    use('hrsh7th/vim-vsnip')
 
-    use("simrat39/rust-tools.nvim")
+    use('simrat39/rust-tools.nvim')
 
-    use("nvim-lua/popup.nvim")
+    use('nvim-lua/popup.nvim')
 
-    use("nvim-lua/plenary.nvim")
+    use('nvim-lua/plenary.nvim')
 
     use {
         'nvim-lualine/lualine.nvim',
@@ -49,31 +49,31 @@ return require('packer').startup(function(use)
     }
     use 'sigmasd/deno-nvim'
     use({
-        "aserowy/tmux.nvim",
-        config = function() require("tmux").setup() end
+        'aserowy/tmux.nvim',
+        config = function() require('tmux').setup() end
     })
 
     use('kyazdani42/nvim-web-devicons')
 
-    use("christoomey/vim-tmux-navigator")
+    use('christoomey/vim-tmux-navigator')
 
     use('norcalli/nvim-colorizer.lua')
 
     use 'ThePrimeagen/vim-be-good'
 
     use {
-        "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim",
+        'williamboman/mason.nvim',
+        'williamboman/mason-lspconfig.nvim',
     }
 
     use 'github/copilot.vim'
 
     -- Lua
     use {
-        "folke/todo-comments.nvim",
-        requires = "nvim-lua/plenary.nvim",
+        'folke/todo-comments.nvim',
+        requires = 'nvim-lua/plenary.nvim',
         config = function()
-            require("todo-comments").setup {
+            require('todo-comments').setup {
                 -- your configuration comes here
                 -- or leave it empty to use the default settings
                 -- refer to the configuration section below
@@ -85,11 +85,34 @@ return require('packer').startup(function(use)
 
     use 'vim-autoformat/vim-autoformat'
 
-    -- install without yarn or npm
     use({
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
     })
 
+    use {
+        'lewis6991/gitsigns.nvim',
+        config = function()
+            require('gitsigns').setup()
+        end
+    }
 
+    use 'navarasu/onedark.nvim' -- Theme inspired by Atom
+
+    use { 'catppuccin/nvim', as = "catppuccin" }
+
+    use 'folke/tokyonight.nvim'
+
+    use 'nyoom-engineering/nyoom.nvim'
+
+    use {
+        "folke/zen-mode.nvim",
+        config = function()
+            require("zen-mode").setup {
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            }
+        end
+    }
 end)
