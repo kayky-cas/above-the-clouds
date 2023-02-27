@@ -20,9 +20,13 @@ nnoremap("<leader><C-h>", "<cmd>vertical resize -25<CR>")
 nnoremap("<leader><C-j>", "<cmd>resize +25<CR>")
 nnoremap("<leader><C-k>", "<cmd>resize -25<CR>")
 nnoremap("<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>")
-nnoremap("<leader>s", "<cmd>lua vim.lsp.buf.rename()<CR>")
+nnoremap("<leader>i", "<cmd>lua vim.lsp.buf.implementation()<CR>")
 
 nnoremap("<C-d>", "<C-d>zz")
 nnoremap("<C-u>", "<C-u>zz")
 nnoremap("y", "\"*y")
+
+
+nnoremap("∆", "<cmd>move +1<CR>")
+nnoremap("˚", "<cmd>move -2<CR>")
 -- vim.keymap.set('n', '<leader><Tab>', builtin.buffers, {})
