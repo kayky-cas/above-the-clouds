@@ -85,6 +85,11 @@ return require('packer').startup(function(use)
 
     use 'vim-autoformat/vim-autoformat'
 
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
+
     use {
         'lewis6991/gitsigns.nvim',
         config = function()
@@ -110,14 +115,4 @@ return require('packer').startup(function(use)
             }
         end
     }
-
-    use {
-        'https://codeberg.org/esensar/nvim-dev-container',
-
-        config = function()
-            require("nvim-dev-container").setup {
-            }
-        end
-    }
-
 end)
