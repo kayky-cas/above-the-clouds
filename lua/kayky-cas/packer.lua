@@ -101,14 +101,23 @@ return require('packer').startup(function(use)
     use 'nyoom-engineering/nyoom.nvim'
 
     use {
-      "folke/zen-mode.nvim",
-      config = function()
-        require("zen-mode").setup {
-          -- your configuration comes here
-          -- or leave it empty to use the default settings
-          -- refer to the configuration section below
-        }
-      end
-   }
- 
+        "folke/zen-mode.nvim",
+        config = function()
+            require("zen-mode").setup {
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            }
+        end
+    }
+
+    use {
+        'https://codeberg.org/esensar/nvim-dev-container',
+
+        config = function()
+            require("nvim-dev-container").setup {
+            }
+        end
+    }
+
 end)

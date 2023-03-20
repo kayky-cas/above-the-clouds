@@ -1,10 +1,11 @@
 local nnoremap = require("kayky-cas.keymap").nnoremap
 
 nnoremap("<leader>e", "<cmd>Ex<CR>")
-nnoremap("<leader>w", "<cmd>w<CR>")
-nnoremap("<leader>q", "<cmd>close<CR>")
+nnoremap("<leader>w", "<cmd>Autoformat | w<CR>")
+nnoremap("<leader>W", "<cmd>w<CR>")
 nnoremap("<leader>q", "<cmd>close<CR>")
 nnoremap("<leader>Q", "<cmd>q<CR>")
+nnoremap("<leader>f", "<cmd>Autoformat<CR>")
 
 nnoremap("<leader>-", "<C-w>v")
 nnoremap("<leader>=", "<C-w>s")
@@ -27,6 +28,6 @@ nnoremap("<C-u>", "<C-u>zz")
 nnoremap("y", "\"*y")
 
 
-nnoremap("∆", "<cmd>move +1<CR>")
-nnoremap("˚", "<cmd>move -2<CR>")
+--nnoremap("∆", "<cmd>move +1<CR>")
+--nnoremap("˚", "<cmd>move -2<CR>")
 -- vim.keymap.set('n', '<leader><Tab>', builtin.buffers, {})

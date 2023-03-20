@@ -21,6 +21,5 @@ vim.g.clipboard = "unnamedplus"
 
 -- vim.opt.guicursor = "n-v-c-i:block"
 
-
 vim.cmd("set clipboard+=unnamedplus")
-vim.cmd("autocmd BufWritePre * :Autoformat")
+-- vim.cmd("autocmd BufWritePre * :Autoformat")
