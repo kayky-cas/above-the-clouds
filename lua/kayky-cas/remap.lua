@@ -1,6 +1,7 @@
 local nnoremap = require("kayky-cas.keymap").nnoremap
 
 nnoremap("<leader>e", "<cmd>Ex<CR>")
+-- nnoremap("<leader>w", "<cmd>lua vim.lsp.buf.format()<CR><cmd>w<CR>")
 nnoremap("<leader>w", "<cmd>Autoformat | w<CR>")
 nnoremap("<leader>W", "<cmd>w<CR>")
 nnoremap("<leader>q", "<cmd>close<CR>")
@@ -26,7 +27,6 @@ nnoremap("<leader>i", "<cmd>lua vim.lsp.buf.implementation()<CR>")
 nnoremap("<C-d>", "<C-d>zz")
 nnoremap("<C-u>", "<C-u>zz")
 nnoremap("y", "\"*y")
-
 
 --nnoremap("∆", "<cmd>move +1<CR>")
 --nnoremap("˚", "<cmd>move -2<CR>")

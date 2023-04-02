@@ -13,7 +13,7 @@ nvim_lsp.rust_analyzer.setup {
 nvim_lsp.denols.setup {
     root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
 }
-
+nvim_lsp.prismals.setup{}
 nvim_lsp.tsserver.setup {
     root_dir = nvim_lsp.util.root_pattern("package.json"),
 }
