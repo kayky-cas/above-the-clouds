@@ -115,4 +115,8 @@ return require('packer').startup(function(use)
             }
         end
     }
+
+    use 'ThePrimeagen/harpoon'
+    use 'gpanders/editorconfig.nvim'
+    use 'sbdchd/neoformat'
 end)
