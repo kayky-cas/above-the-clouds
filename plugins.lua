@@ -8,6 +8,28 @@ local plugins = {
     }
   },
   {
+    "nvim-telescope/telescope.nvim",
+    opts = {
+      defaults = {
+        file_ignore_patterns = { "node_modules", "dist", "target" },
+      }
+    }
+  },
+  {
+    "zbirenbaum/copilot.lua",
+    event = "InsertEnter",
+    opts = {
+      suggestion = {
+        auto_trigger = true,
+        keymap = {
+          accept = "<C-d>",
+          accept_word = false,
+          accept_line = false,
+        },
+      }
+    },
+  },
+  {
     "neovim/nvim-lspconfig",
     config = function ()
       require "plugins.configs.lspconfig"
@@ -34,7 +56,7 @@ local plugins = {
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
-    ft = "typescript",
+    ft = {"typescript", "html"},
     dependencies = "neovim/nvim-lspconfig",
     opts = function ()
       return require "custom.configs.null-ls"
@@ -43,6 +65,12 @@ local plugins = {
       vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
       require("null-ls").setup(opts)
     end
+  },
+  {
+    "nvim-lua/plenary.nvim",
+  },
+  {
+    "ThePrimeagen/harpoon",
   }
 }
 
