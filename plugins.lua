@@ -3,7 +3,8 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        "typescript-language-server"
+        "typescript-language-server",
+        "clangd"
       }
     }
   },
@@ -11,7 +12,7 @@ local plugins = {
     "nvim-telescope/telescope.nvim",
     opts = {
       defaults = {
-        file_ignore_patterns = { "node_modules", "dist", "target" },
+        file_ignore_patterns = { "node_modules", "dist", "target", ".o" },
       }
     }
   },
@@ -23,6 +24,7 @@ local plugins = {
         auto_trigger = true,
         keymap = {
           accept = "<C-d>",
+          dismiss = "<C-c>",
           accept_word = false,
           accept_line = false,
         },
@@ -56,7 +58,7 @@ local plugins = {
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
-    ft = {"typescript", "html"},
+    ft = {"typescript", "html", "c", "javascript", "json"},
     dependencies = "neovim/nvim-lspconfig",
     opts = function ()
       return require "custom.configs.null-ls"
@@ -71,7 +73,8 @@ local plugins = {
   },
   {
     "ThePrimeagen/harpoon",
-  }
+  },
+  'christoomey/vim-tmux-navigator'
 }
 
 return plugins

@@ -3,7 +3,7 @@ require "custom.set"
 
 local M = {}
 M.ui = {
-  theme = 'tokyonight',
+  theme = 'bearded-arc',
   tabufline = {
     enabled = false
   }

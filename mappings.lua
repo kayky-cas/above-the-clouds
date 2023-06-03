@@ -12,6 +12,8 @@ M.custom = {
     ["<leader>w"] = {"<cmd>w<CR>", "save file", opts = { nowait = true }},
     ["<leader>q"] = {"<cmd>q<CR>", "close file", opts = { nowait = true }},
     ["<leader>Q"] = {"<cmd>q!<CR>", "force close file", opts = { nowait = true }},
+    ["<C-d>"] = {"<C-d>zz", opts = { nowait = true }},
+    ["<C-u>"] = {"<C-u>zz", opts = { nowait = true }},
   }
 }
 
@@ -20,6 +22,12 @@ M.telescope = {
 
   n = {
     ["<leader><space>"] = { "<cmd> Telescope find_files <CR>", "find files" },
+  }
+}
+
+M.rust_tools = {
+  n = {
+    ["<leader>a"] = { "<cmd> RustCodeAction <CR>", "rust code actions" },
   }
 }
 
@@ -44,7 +52,8 @@ for i = 1, 9 do
   M.harpoon.n["<space>"..i] = {
     function ()
       require("harpoon.ui").nav_file(i)
-    end
+    end,
+    "go to harpoon buffer "..i
   }
 end
 
