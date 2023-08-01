@@ -4,6 +4,15 @@ M.disabled = {
   n = {
       ["<leader>wk"] = "",
       ["<leader>rn"] = "",
+      ["<leader>v"] = "",
+      ["<leader>h"] = "",
+      ["<leader>n"] = "",
+      ["<leader>wa"] = "",
+      ["<leader>wK"] = "",
+      ["<leader>wl"] = "",
+      ["<leader>wr"] = "",
+      ["<C-n>"] = "",
+      ["<C-p>"] = "",
   }
 }
 
@@ -14,6 +23,7 @@ M.custom = {
     ["<leader>Q"] = {"<cmd>q!<CR>", "force close file", opts = { nowait = true }},
     ["<C-d>"] = {"<C-d>zz", opts = { nowait = true }},
     ["<C-u>"] = {"<C-u>zz", opts = { nowait = true }},
+    ["<leader>e"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree" },
   }
 }
 
@@ -21,7 +31,7 @@ M.telescope = {
   plugin = true,
 
   n = {
-    ["<leader><space>"] = { "<cmd> Telescope find_files <CR>", "find files" },
+    ["<leader><space>"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "Find all" },
   }
 }
 
