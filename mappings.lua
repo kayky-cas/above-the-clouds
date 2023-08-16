@@ -41,6 +41,12 @@ M.rust_tools = {
   }
 }
 
+M.centerpad = {
+  n = {
+    ["<leader>z"] = { "<cmd> lua require'centerpad'.toggle() <CR>", "centerpad" },
+  }
+}
+
 M.harpoon = {
   n = {
     ["<leader>o"] = {

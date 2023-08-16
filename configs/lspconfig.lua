@@ -13,3 +13,10 @@ lspconfig.clangd.setup{
   on_attach = on_attach,
   capabilities = capabilities,
 }
+
+lspconfig.sourcekit.setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = { "sourcekit-lsp", "--log-level", "error" },
+  filetypes = { "swift" },
+}

@@ -74,7 +74,25 @@ local plugins = {
   {
     "ThePrimeagen/harpoon",
   },
-  'christoomey/vim-tmux-navigator'
+  'christoomey/vim-tmux-navigator',
+  {
+    'smithbm2316/centerpad.nvim',
+    lazy = false,
+  },
+  {
+    'xbase-lab/xbase',
+    dependencies = {
+      "neovim/nvim-lspconfig",
+      "nvim-telescope/telescope.nvim", -- optional
+      "nvim-lua/plenary.nvim", -- optional/requirement of telescope.nvim
+    },
+    opts = function ()
+      return require "custom.configs.xbase-config"
+    end,
+    config = function (_, opts)
+      require'xbase'.setup(opts)  -- see default configuration bellow
+    end
+  }
 }
 
 return plugins
