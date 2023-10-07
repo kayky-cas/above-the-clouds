@@ -565,6 +565,12 @@ vim.keymap.set('n', "<leader>o", "<cmd>lua require(\"harpoon.ui\").toggle_quick_
 vim.keymap.set('n', "<leader>m", "<cmd>lua require(\"harpoon.mark\").add_file()<cr>", { desc = "mark on harpoon menu" })
 
 for i = 1, 9 do
-  vim.keymap.set('n', "<space>" .. i, "<cmd>lua require(\"harpoon.ui\").nav_file(i)<CR>",
+  vim.keymap.set('n', "<space>" .. i, "<cmd>lua require(\"harpoon.ui\").nav_file(" .. i .. ")<CR>",
     { desc = "go to harpoon buffer " .. i })
 end
+
+require('onedark').setup {
+  style = 'darker',
+  transparent = true,
+}
+require('onedark').load()
