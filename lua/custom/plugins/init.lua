@@ -11,5 +11,5 @@ return {
     end,
   },
   "ThePrimeagen/harpoon",
-  'christoomey/vim-tmux-navigator'
+  'christoomey/vim-tmux-navigator',
 }
