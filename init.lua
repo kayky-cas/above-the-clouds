@@ -162,7 +162,7 @@ require('lazy').setup({
         component_separators = '|',
         section_separators = '',
       },
-    },
+    }
   },
 
   {
@@ -172,6 +172,7 @@ require('lazy').setup({
     -- See `:help indent_blankline.txt`
     main = "ibl",
     opts = {
+      indent = { char = "|" },
     },
   },
 
