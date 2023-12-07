@@ -11,6 +11,7 @@ local opts = {
     null_ls.builtins.formatting.prettier,
     null_ls.builtins.formatting.stylua,
     null_ls.builtins.formatting.rustfmt,
+    null_ls.builtins.formatting.clang_format,
     null_ls.builtins.diagnostics.eslint,
   },
   on_attach = function(client, bufnr)
