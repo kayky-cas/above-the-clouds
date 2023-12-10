@@ -576,3 +576,5 @@ require('onedark').setup {
   transparent = true,
 }
 require('onedark').load()
+
+vim.keymap.set('n', '<leader>gp', '<cmd>Git push<cr>', { buffer = bufnr, desc = 'Git push' })
