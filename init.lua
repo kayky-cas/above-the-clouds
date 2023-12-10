@@ -173,6 +173,7 @@ require('lazy').setup({
     main = "ibl",
     opts = {
       indent = { char = "|" },
+      whitespace = { highlight = { "Whitespace", "NonText" } },
     },
   },
 
@@ -379,10 +380,10 @@ require('nvim-treesitter.configs').setup {
     swap = {
       enable = true,
       swap_next = {
-        ['<leader>a'] = '@parameter.inner',
+        ['<C-a>'] = '@parameter.inner',
       },
       swap_previous = {
-        ['<leader>A'] = '@parameter.inner',
+        ['<C-A>'] = '@parameter.inner',
       },
     },
   },
@@ -575,3 +576,5 @@ require('onedark').setup {
   transparent = true,
 }
 require('onedark').load()
+
+vim.keymap.set('n', '<leader>gp', '<cmd>Git push<cr>', { buffer = bufnr, desc = 'Git push' })

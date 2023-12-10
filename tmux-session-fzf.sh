@@ -10,5 +10,9 @@ if [ -n "$folder" ]; then
     tmux new-session -d -s "$folder_name" -c "$folder"
   fi
 
-  tmux switch-client -t "$folder_name"
+  if [ -z "$TMUX" ]; then
+    tmux attach-session -t "$folder_name"
+  else
+    tmux switch-client -t "$folder_name"
+  fi
 fi
