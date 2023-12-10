@@ -543,7 +543,7 @@ cmp.setup {
 
 local keymap = vim.keymap
 
-keymap.set('n', '<leader>w', ":w <CR>", { desc = 'Save current buffer' })
+keymap.set('n', '<leader>w', ":w <CR>", { desc = 'Save current buffer', silent = true })
 keymap.set('n', '<leader>q', ":q <CR>", { desc = 'Close current buffer' })
 keymap.set('n', '<leader>Q', ":q! <CR>", { desc = 'Close current buffer' })
 
