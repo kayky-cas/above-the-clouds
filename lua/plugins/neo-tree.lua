@@ -8,6 +8,18 @@ return {
         "MunifTanjim/nui.nvim",
     },
     config = function()
-        vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle git_status<cr>", {})
+
+        local opts = {
+            filesystem = {
+                filtered_items = {
+                    visible = true,
+                },
+            }
+        }
+
+        require("neo-tree").setup(opts)
+
+        vim.keymap.set("n", "<leader>e", "<cmd>Neotree filesystem toggle<cr>", {})
+        -- vim.cmd("Neotree")
     end
 }
